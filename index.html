@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(to right, #1a1a1a, #4d4d4d, #1a1a1a);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .form-title {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #4d4d4d;
+        }
+
+        input {
+            display: block;
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .submit-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+    <!-- Inclua os scripts do Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <!-- Configuração do Firebase -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAxH5o_IV9WZn72FyYUeyM4JbF4ls4cvqw",
+            authDomain: "ficha-teste-ad5fa.firebaseapp.com",
+            projectId: "ficha-teste-ad5fa",
+            storageBucket: "ficha-teste-ad5fa.appspot.com",
+            messagingSenderId: "890260354540",
+            appId: "1:890260354540:web:7b64a2205de5a347fc3cc9"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h1 class="form-title">Login</h1>
+        <form id="login-form">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Senha" required>
+            <button type="submit" class="submit-button">Login</button>
+            <div class="error-message" id="error-message"></div>
+        </form>
+    </div>
+
+    <!-- Manipulação do formulário -->
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const errorMessage = document.getElementById('error-message');
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const email = loginForm.email.value;
+            const password = loginForm.password.value;
+
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    location.href = "ficha.html"; // Redireciona para a página após o login
+                    console.log('Login bem-sucedido!', userCredential);
+                })
+                .catch((error) => {
+                    console.error('Erro no login:', error.message);
+                    errorMessage.textContent = 'Erro no login: ' + error.message;
+                });
+        });
+    </script>
+</body>
+</html>
+
+
+
+      

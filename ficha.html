@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Personagem Automatizada</title>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+    <div class="container">
+        <h1>Ficha de Personagem - Sistema de Save</h1>
+
+        <!-- Adicione o input para upload de imagem do personagem -->
+        <label class="picture" for="picture__input" tabIndex="0">
+            <span class="picture__image">Clique para adicionar imagem</span>
+        </label>
+        <input type="file" name="picture__input" id="picture__input">
+
+        <form id="characterForm">
+            <h2>Dados do Personagem</h2>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="characterClass">Classe:</label>
+            <input type="text" id="characterClass" name="characterClass" required>
+
+            <label for="region">Região (Origem):</label>
+            <input type="text" id="region" name="region" required>
+
+            <label for="faith">Fé:</label>
+            <input type="text" id="faith" name="faith" required>
+
+            <label for="background">Antecedente:</label>
+            <input type="text" id="background" name="background" required>
+
+            <label for="ageReal">Idade (real):</label>
+            <input type="number" id="ageReal" name="ageReal" required>
+
+            <label for="ageApparent">Idade (aparente):</label>
+            <input type="number" id="ageApparent" name="ageApparent" required>
+
+            <h2>Atributos</h2>
+            <div class="attributes">
+                <div class="attribute">
+                    <label for="strength">FORÇA:</label>
+                    <input type="number" id="strength" name="strength" required>
+                </div>
+                <div class="attribute">
+                    <label for="agility">AGILIDADE:</label>
+                    <input type="number" id="agility" name="agility" required>
+                </div>
+                <div class="attribute">
+                    <label for="wisdom">SABEDORIA:</label>
+                    <input type="number" id="wisdom" name="wisdom" required>
+                </div>
+                <div class="attribute">
+                    <label for="intelligence">INTELIGÊNCIA:</label>
+                    <input type="number" id="intelligence" name="intelligence" required>
+                </div>
+                <div class="attribute">
+                    <label for="luck">SORTE:</label>
+                    <input type="number" id="luck" name="luck" required>
+                </div>
+                <div class="attribute">
+                    <label for="adaptability">ADAPTABILIDADE:</label>
+                    <input type="number" id="adaptability" name="adaptability" required>
+                </div>
+                <div class="attribute">
+                    <label for="charisma">CARISMA:</label>
+                    <input type="number" id="charisma" name="charisma" required>
+                </div>
+            </div>
+
+            <h2>Habilidades</h2>
+            <div class="abilities">
+                <div class="ability">
+                    <label for="ability1">Habilidade 1:</label>
+                    <input type="text" id="ability1" name="ability1" required>
+                </div>
+                <div class="ability">
+                    <label for="ability2">Habilidade 2:</label>
+                    <input type="text" id="ability2" name="ability2" required>
+                </div>
+                <div class="ability">
+                    <label for="ability3">Habilidade 3:</label>
+                    <input type="text" id="ability3" name="ability3" required>
+                </div>
+                <div class="ability">
+                    <label for="ability4">Habilidade 4:</label>
+                    <input type="text" id="ability4" name="ability4" required>
+                </div>
+            </div>
+
+            <h2>Perícias</h2>
+            <div class="skills">
+                <div class="skill">
+                    <label for="skill1">Perícia 1:</label>
+                    <input type="text" id="skill1" name="skill1" required>
+                </div>
+                <div class="skill">
+                    <label for="skill2">Perícia 2:</label>
+                    <input type="text" id="skill2" name="skill2" required>
+                </div>
+                <div class="skill">
+                    <label for="skill3">Perícia 3:</label>
+                    <input type="text" id="skill3" name="skill3" required>
+                </div>
+                <div class="skill">
+                    <label for="skill4">Perícia 4:</label>
+                    <input type="text" id="skill4" name="skill4" required>
+                </div>
+                <div class="skill">
+                    <label for="skill5">Perícia 5:</label>
+                    <input type="text" id="skill5" name="skill5" required>
+                </div>
+                <div class="skill">
+                    <label for="skill6">Perícia 6:</label>
+                    <input type="text" id="skill6" name="skill6" required>
+                </div>
+                <div class="skill">
+                    <label for="skill7">Perícia 7:</label>
+                    <input type="text" id="skill7" name="skill7" required>
+                </div>
+                <div class="skill">
+                    <label for="skill8">Perícia 8:</label>
+                    <input type="text" id="skill8" name="skill8" required>
+                </div>
+                <div class="skill">
+                    <label for="skill9">Perícia 9:</label>
+                    <input type="text" id="skill9" name="skill9" required>
+                </div>
+                <div class="skill">
+                    <label for="skill10">Perícia 10:</label>
+                    <input type="text" id="skill10" name="skill10" required>
+                </div>
+            </div>
+
+            <h2>Itens</h2>
+            <div class="items">
+                <h3>Consumíveis:</h3>
+                <div class="item">
+                    <label for="consumable1">Consumível 1:</label>
+                    <input type="text" id="consumable1" name="consumable1" required>
+                </div>
+                <div class="item">
+                    <label for="consumable2">Consumível 2:</label>
+                    <input type="text" id="consumable2" name="consumable2" required>
+                </div>
+
+                <h3>Equipamentos:</h3>
+                <div class="item">
+                    <label for="equipment1">Equipamento 1:</label>
+                    <input type="text" id="equipment1" name="equipment1" required>
+                </div>
+                <div class="item">
+                    <label for="equipment2">Equipamento 2:</label>
+                    <input type="text" id="equipment2" name="equipment2" required>
+                </div>
+                <div class="item">
+                    <label for="equipment3">Equipamento 3:</label>
+                    <input type="text" id="equipment3" name="equipment3" required>
+                </div>
+                <div class="item">
+                    <label for="equipment4">Equipamento 4:</label>
+                    <input type="text" id="equipment4" name="equipment4" required>
+                </div>
+            </div>
+
+            <h2>Dados</h2>
+            <div class="dice">
+                <button type="button" onclick="rollDice()">Rolar Dados</button>
+                <div id="diceResult"></div>
+            </div>
+
+            <button type="submit">Salvar Ficha</button>
+        </form>
+
+        <div id="successMessage">Ficha salva com sucesso!</div>
+        <div id="errorMessage">Erro ao salvar a ficha. Por favor, tente novamente.</div>
+
+        <div id="characterSheet"></div>
+    </div>
+
+    <script>
+        // Função para tratar o upload de imagem do personagem
+        document.getElementById('picture__input').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imgElement = document.createElement('img');
+                imgElement.src = e.target.result;
+                document.querySelector('.picture__image').innerHTML = '';
+                document.querySelector('.picture__image').appendChild(imgElement);
+            };
+            reader.readAsDataURL(file);
+        });
+
+        // Função para rolar dados
+        function rollDice() {
+            const result = Math.floor(Math.random() * 20) + 1;
+            document.getElementById('diceResult').textContent = `Resultado: ${result}`;
+        }
+
+        // Função para salvar a ficha do personagem
+        document.getElementById('characterForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const data = new FormData(form);
+
+            fetch('https://seu-servidor-api.com/save', {
+                method: 'POST',
+                body: data
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    document.getElementById('successMessage').style.display = 'block';
+                    document.getElementById('errorMessage').style.display = 'none';
+                    document.getElementById('characterSheet').textContent = JSON.stringify(result.data, null, 2);
+                } else {
+                    document.getElementById('successMessage').style.display = 'none';
+                    document.getElementById('errorMessage').style.display = 'block';
+                }
+            })
+            .catch(error => {
+                document.getElementById('successMessage').style.display = 'none';
+                document.getElementById('errorMessage').style.display = 'block';
+            });
+        });
+    </script>
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+   </script>
+</body>
+</html>
+
+  
+     
+
+
+
+
+
+        
+        
+   
