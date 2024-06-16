@@ -144,22 +144,23 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Função para salvar dados no Cloud Firestore
-    function saveCharacterToDatabase(formData) {
-        const data = Object.fromEntries(formData.entries());
-
-        db.collection('characters').add(data)
-            .then(() => {
-                successMessage.style.display = 'block';
-                errorMessage.style.display = 'none';
-            })
-            .catch(error => {
-                console.error(error);
-                successMessage.style.display = 'none';
-                errorMessage.style.display = 'block';
-            });
-    }
-
+    /**
+ * Salva dados no Cloud Firestore
+ * @param {string} collection - Nome da coleção onde os dados serão salvos
+ * @param {Object} data - Dados a serem salvos
+ * @returns {Promise} - Retorna uma promessa que resolve com o ID do documento salvo
+ */
+function saveDataToFirestore(collection, data) {
+    return db.collection(collection).add(data)
+        .then((docRef) => {
+            console.log("Documento salvo com ID: ", docRef.id);
+            return docRef.id;
+        })
+        .catch((error) => {
+            console.error("Erro ao salvar documento: ", error);
+            throw error;
+        });
+}
     // Evento de alteração para o upload de imagem
     inputFile.addEventListener("change", function (e) {
         const file = e.target.files[0];
